@@ -1,0 +1,3 @@
+[submodule "storyscript.tmbundle"]
+	path = storyscript.tmbundle
+	url = git@github.com:storyscript/storyscript.tmbundle.git

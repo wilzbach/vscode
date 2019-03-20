@@ -1,0 +1,25 @@
+{
+    "name": "storyscript",
+    "displayName": "Storyscript",
+    "description": "Support for Asyncy's Cloud Native Programming Language, Storyscript",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.32.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "storyscript",
+            "aliases": ["Storyscript", "storyscript"],
+            "extensions": [".story"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "storyscript",
+            "scopeName": "source.story",
+            "path": "./syntaxes/Storyscript.tmLanguage"
+        }]
+    }
+}
