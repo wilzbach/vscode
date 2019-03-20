@@ -5,6 +5,8 @@
 - Syntax highlighting
 - Autocomplete (provided via the LSP module)
 
+![Storyscript in Visual Studio Code](https://raw.githubusercontent.com/storyscript/vscode/master/preview.png)
+
 ## Installation
 Linux/Mac:
 ```shell
