@@ -12,4 +12,6 @@ Linux/Mac:
 ```shell
 $ cd ~/.vscode/extensions/
 $ git clone git@github.com:storyscript/vscode.git storyscript
+$ cd storyscript
+$ git submodule update --init --recursive
 ``` 
