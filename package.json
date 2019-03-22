@@ -2,24 +2,57 @@
     "name": "storyscript",
     "displayName": "Storyscript",
     "description": "Support for Asyncy's Cloud Native Programming Language, Storyscript",
+    "icon": "res/icon.png",
+    "publisher": "Asyncy",
+    "license": "Apache-2.0",
+    "author": {
+        "name": "Asyncy",
+        "url": "https://asyncy.com"
+    },
+    "bugs": {
+        "url": "https://github.com/storyscript/vscode/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/storyscript/vscode"
+    },
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.32.0"
     },
     "categories": [
-        "Programming Languages"
+        "Programming Languages",
+        "Formatters",
+        "Linters",
+        "Other"
+    ],
+    "keywords": [
+        "storyscript",
+        "scripting"
+    ],
+    "activationEvents": [
+        "onLanguage:storyscript"
     ],
     "contributes": {
-        "languages": [{
-            "id": "storyscript",
-            "aliases": ["Storyscript", "storyscript"],
-            "extensions": [".story"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "storyscript",
-            "scopeName": "source.story",
-            "path": "./syntaxes/Storyscript.tmLanguage"
-        }]
+        "languages": [
+            {
+                "id": "storyscript",
+                "aliases": [
+                    "Storyscript",
+                    "storyscript"
+                ],
+                "extensions": [
+                    ".story"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "storyscript",
+                "scopeName": "source.story",
+                "path": "./syntaxes/Storyscript.tmLanguage"
+            }
+        ]
     }
 }
