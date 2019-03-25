@@ -20,6 +20,8 @@
     "engines": {
         "vscode": "^1.32.0"
     },
+    "homepage": "http://storyscript.org",
+    "qna": "https://github.com/storyscript/vscode/issues",
     "categories": [
         "Programming Languages",
         "Formatters",
