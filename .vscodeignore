@@ -1,2 +1,3 @@
-.vscode
-.vscode-dev
+.vscode/
+.vscode-dev/
+venv/
