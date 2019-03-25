@@ -23,10 +23,42 @@ ext install asyncy.storyscript
 
 ## Development
 
-Linux/Mac:
+1) Install all dependencies
 
-```shell
-$ cd ~/.vscode/extensions/
-$ git clone --recursive git@github.com:storyscript/vscode.git storyscript
-$ cd storyscript
+```sh
+npm install
 ```
+
+2) Open up VSCode (dev instance)
+
+```sh
+npm run vscode
+```
+
+### Development tips
+
+#### Automatically recompile the extension
+
+Use Typescript's `watch` to monitor all Typescript files and automatically recompile the extension:
+
+```sh
+npm run watch
+```
+
+Now you can use the `vscode:open` target to start the VSCode instance faster:
+
+```sh
+npm run vscode:open
+```
+
+Subsequent executions of `npm run vscode:open` will refresh the development instance.
+
+#### Spawn via VSCode
+
+You can also start up a VSCode instance via VSCode. This will allow you to debug into an extension.
+
+1) Open VSCode
+2) Open Folder (-> select "<this-dir>/client")
+3) View -> Debug
+4) Run "Launch Client"
+5) Open up a directory with Storyscript files or create a new `.story` file
