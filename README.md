@@ -1,5 +1,7 @@
 # VSCode Storyscript extension
 
+[![CircleCI](https://img.shields.io/circleci/project/github/storyscript/vscode/master.svg?style=for-the-badge)](https://circleci.com/gh/storyscript/vscode)
+
 Provides Storyscript language support for Visual Studio Code powered by the [Storyscript Language Server](https://github.com/storyscript/sls).
 
 ## Installation
