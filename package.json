@@ -18,7 +18,7 @@
     },
     "version": "0.0.4",
     "engines": {
-        "vscode": "^1.32.0"
+        "vscode": "^1.26.0"
     },
     "homepage": "http://storyscript.org",
     "qna": "https://github.com/storyscript/vscode/issues",
@@ -99,7 +99,7 @@
     },
     "dependencies": {
         "lodash": "^4.17.11",
-        "vscode-languageclient": "^5.2.1"
+        "vscode-languageclient": "~5.1.1"
     },
     "devDependencies": {
         "@types/node": "^8.0.0",
