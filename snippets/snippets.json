@@ -1,0 +1,50 @@
+{
+	"for": {
+		"prefix": "for",
+		"body": "foreach ${1:array} as ${2:name}\n  ${0:# body...}",
+		"description": "Array Comprehension",
+		"scope": "source.story"
+	},
+	"elif": {
+		"prefix": "elif",
+		"body": "else if ${1:condition}\n  ${0:# ...}",
+		"description": "Else if",
+		"scope": "source.story"
+	},
+	"fun": {
+		"prefix": "fun",
+		"body": "function ${1:name} ${2:arg}:${3:type} returns ${4:type}\n  ${0:# do stuff...}\n\n",
+		"description": "Function",
+		"scope": "source.story"
+	},
+	"ife": {
+		"prefix": "ife",
+		"body": "if ${1:condition}\n  ${2:# ...}\nelse\n  ${3:# ...}",
+		"description": "If .. Else",
+		"scope": "source.story"
+	},
+	"if": {
+		"prefix": "if",
+		"body": "if ${1:condition}\n  ${0:# ...}",
+		"description": "If",
+		"scope": "source.story"
+	},
+	"#": {
+		"prefix": "#",
+		"body": "{${1:$TM_SELECTED_TEXT}}",
+		"description": "Interpolated Code",
+		"scope": "(string.quoted.double.story) - string source, (string.quoted.double.heredoc.story) - string source"
+	},
+	"try": {
+		"prefix": "try",
+		"body": "try\n  $1\ncatch ${2:error}\n  $3",
+		"description": "Try .. Catch",
+		"scope": "source.story"
+	},
+	"when": {
+		"prefix": "when",
+		"body": "when ${1:serice} ${2:action} ${3:event} ${4:key}:${5:value} as event\n\t${0:# ...}",
+		"description": "Event Handler",
+		"scope": "source.story"
+	}
+}
