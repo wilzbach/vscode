@@ -1,0 +1,615 @@
+{
+  "fileTypes": [
+    "story",
+    "storyscript"
+  ],
+  "name": "Storyscript",
+  "patterns": [
+    {
+      "include": "#main"
+    }
+  ],
+  "scopeName": "source.story",
+  "uuid": "DB4E14AE-D10C-4B28-A55E-7C895B402701",
+  "repository": {
+    "main": {
+      "patterns": [
+        {
+          "include": "#multi_line_comment"
+        },
+        {
+          "include": "#comment"
+        },
+        {
+          "include": "#keyword"
+        },
+        {
+          "include": "#assignment"
+        },
+        {
+          "include": "#scope"
+        },
+        {
+          "include": "#function"
+        },
+        {
+          "include": "#something"
+        }
+      ]
+    },
+    "arithmetic": {
+      "patterns": [
+        {
+          "match": "(\\+|\\-|\\*|\\*\\*|/|//|%|<<|>>|&|\\||\\^|~|(?!^)@)",
+          "name": "keyword.operator.arithmetic.Storyscript"
+        }
+      ]
+    },
+    "assignment": {
+      "patterns": [
+        {
+          "match": "(=)",
+          "name": "keyword.operator.assignment.Storyscript"
+        }
+      ]
+    },
+    "boolean": {
+      "patterns": [
+        {
+          "match": "(true|false)",
+          "name": "constant.other.Storyscript"
+        }
+      ]
+    },
+    "colon": {
+      "patterns": [
+        {
+          "match": "(\\:)",
+          "name": "constant.character.punctuation.Storyscript"
+        }
+      ]
+    },
+    "comma": {
+      "patterns": [
+        {
+          "match": "(\\,)",
+          "name": "constant.character.punctuation.Storyscript"
+        }
+      ]
+    },
+    "comment": {
+      "patterns": [
+        {
+          "match": "(#.*)",
+          "name": "comment.Storyscript"
+        }
+      ]
+    },
+    "comparison": {
+      "patterns": [
+        {
+          "match": "(<\\=|>\\=|\\=\\=|<|>|\\!\\=)",
+          "name": "keyword.operator.comparison.Storyscript"
+        }
+      ]
+    },
+    "function": {
+      "patterns": [
+        {
+          "begin": "(function)",
+          "beginCaptures": {
+            "1": {
+              "name": "support.function.Storyscript"
+            }
+          },
+          "contentName": "support.function.Storyscript",
+          "end": "((?!function\\s*)\\w+)",
+          "endCaptures": {
+            "1": {
+              "name": "entity.name.function.Storyscript"
+            }
+          }
+        }
+      ]
+    },
+    "function__1": {
+      "patterns": []
+    },
+    "illegal": {
+      "patterns": [
+        {
+          "match": "([^\\s])",
+          "name": "invalid.Storyscript"
+        }
+      ]
+    },
+    "keytype__1": {
+      "patterns": [
+        {
+          "include": "#type"
+        },
+        {
+          "match": "(:)",
+          "name": "constant.character.punctuation.Storyscript"
+        }
+      ]
+    },
+    "keyvalue": {
+      "patterns": [
+        {
+          "begin": "([\\w_]+(?=\\s*:))",
+          "beginCaptures": {
+            "1": {
+              "name": "variable.parameter.Storyscript"
+            }
+          },
+          "contentName": "variable.parameter.Storyscript",
+          "end": "(:)",
+          "endCaptures": {
+            "1": {
+              "name": "constant.character.punctuation.Storyscript"
+            }
+          }
+        }
+      ]
+    },
+    "keyvalue__1": {
+      "patterns": []
+    },
+    "keyword": {
+      "patterns": [
+        {
+          "match": "(break|as|catch|returns?|continue|else|finally|if|then|try|when|while|foreach|pass|import)",
+          "name": "keyword.control.flow.Storyscript"
+        }
+      ]
+    },
+    "list": {
+      "patterns": [
+        {
+          "begin": "(\\[)",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.array.Storyscript"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#list__1"
+            }
+          ],
+          "end": "(\\])",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.definition.array.Storyscript"
+            }
+          }
+        }
+      ]
+    },
+    "list__1": {
+      "patterns": [
+        {
+          "include": "#comma"
+        },
+        {
+          "include": "#something"
+        }
+      ]
+    },
+    "map": {
+      "patterns": [
+        {
+          "begin": "(\\{)",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.Storyscript"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#map__1"
+            }
+          ],
+          "end": "(\\})",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.definition.Storyscript"
+            }
+          }
+        }
+      ]
+    },
+    "map__1": {
+      "patterns": [
+        {
+          "include": "#mapassign"
+        }
+      ]
+    },
+    "mapassign": {
+      "patterns": [
+        {
+          "begin": "((?=[\\\"\\'][\\w_]+[\\\"\\']\\s*:\\s*))",
+          "beginCaptures": {
+            "1": {
+              "name": "meta.identifier.Storyscript"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#mapassign__1"
+            }
+          ],
+          "end": "((?=[\\,\\}]))",
+          "endCaptures": {
+            "1": {
+              "name": "meta.identifier.Storyscript"
+            }
+          }
+        }
+      ]
+    },
+    "mapassign__1": {
+      "patterns": [
+        {
+          "include": "#comma"
+        },
+        {
+          "include": "#colon"
+        },
+        {
+          "include": "#something"
+        }
+      ]
+    },
+    "multi_line_comment": {
+      "patterns": [
+        {
+          "begin": "(###)",
+          "beginCaptures": {
+            "1": {
+              "name": "comment.Storyscript"
+            }
+          },
+          "contentName": "comment.Storyscript",
+          "end": "(###[^\\n]*)",
+          "endCaptures": {
+            "1": {
+              "name": "comment.Storyscript"
+            }
+          }
+        }
+      ]
+    },
+    "multi_line_comment__1": {
+      "patterns": []
+    },
+    "null": {
+      "patterns": [
+        {
+          "match": "(null)",
+          "name": "support.constant.Storyscript"
+        }
+      ]
+    },
+    "numeric": {
+      "patterns": [
+        {
+          "match": "\\b((0([box])[0-9a-fA-F]+)|([0-9]+(\\.[0-9]+)?(e[\\x{002b}\\-]?[0-9]+)?))\\b",
+          "name": "constant.numeric.Storyscript"
+        }
+      ]
+    },
+    "placeholder": {
+      "patterns": [
+        {
+          "begin": "(\\{\\s*)",
+          "beginCaptures": {
+            "1": {
+              "name": "string.punctuation.Storyscript"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#placeholder__1"
+            }
+          ],
+          "end": "(\\s*\\})",
+          "endCaptures": {
+            "1": {
+              "name": "string.punctuation.Storyscript"
+            }
+          }
+        }
+      ]
+    },
+    "placeholder__1": {
+      "patterns": [
+        {
+          "include": "#something"
+        }
+      ]
+    },
+    "regexp": {
+      "patterns": [
+        {
+          "match": "(\\/(?![\\s\\x{003d}\\x{002f}\\x{002a}\\x{002b}\\x{007b}\\x{007d}\\x{003f}])(\\\\.|.)*?/[igmy]{0,4}(?![a-zA-Z0-9]))",
+          "name": "source.regexp.Storyscript"
+        }
+      ]
+    },
+    "scope": {
+      "patterns": [
+        {
+          "begin": "(\\()",
+          "beginCaptures": {
+            "1": {
+              "name": "constant.character.punctuation.Storyscript"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#scope__1"
+            }
+          ],
+          "end": "(\\))",
+          "endCaptures": {
+            "1": {
+              "name": "constant.character.punctuation.Storyscript"
+            }
+          }
+        }
+      ]
+    },
+    "scope__1": {
+      "patterns": [
+        {
+          "include": "#something"
+        }
+      ]
+    },
+    "slug": {
+      "patterns": [
+        {
+          "match": "([\\w_]+[\\w_-]*/[\\w_]+[\\w_-]*)",
+          "name": "variable.other.Storyscript"
+        }
+      ]
+    },
+    "something": {
+      "patterns": [
+        {
+          "include": "#numeric"
+        },
+        {
+          "include": "#string_single"
+        },
+        {
+          "include": "#string_double"
+        },
+        {
+          "include": "#string_single_triple"
+        },
+        {
+          "include": "#string_double_triple"
+        },
+        {
+          "include": "#map"
+        },
+        {
+          "include": "#null"
+        },
+        {
+          "include": "#list"
+        },
+        {
+          "include": "#regexp"
+        },
+        {
+          "include": "#boolean"
+        },
+        {
+          "include": "#comment"
+        },
+        {
+          "include": "#keyvalue"
+        },
+        {
+          "include": "#slug"
+        },
+        {
+          "include": "#variable"
+        },
+        {
+          "include": "#varattr"
+        },
+        {
+          "include": "#scope"
+        },
+        {
+          "include": "#comparison"
+        },
+        {
+          "include": "#arithmetic"
+        },
+        {
+          "include": "#illegal"
+        }
+      ]
+    },
+    "string_double": {
+      "patterns": [
+        {
+          "begin": "(\\\")",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.type.string.Storyscript"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#string_double__1"
+            }
+          ],
+          "end": "(\\\")",
+          "endCaptures": {
+            "1": {
+              "name": "storage.type.string.Storyscript"
+            }
+          }
+        }
+      ]
+    },
+    "string_double__1": {
+      "patterns": [
+        {
+          "include": "#string_inner"
+        }
+      ]
+    },
+    "string_double_triple": {
+      "patterns": [
+        {
+          "begin": "(\\\"{3})",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.type.string.Storyscript"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#string_double_triple__1"
+            }
+          ],
+          "end": "(\\\"{3})",
+          "endCaptures": {
+            "1": {
+              "name": "storage.type.string.Storyscript"
+            }
+          }
+        }
+      ]
+    },
+    "string_double_triple__1": {
+      "patterns": [
+        {
+          "include": "#string_inner"
+        }
+      ]
+    },
+    "string_inner": {
+      "patterns": [
+        {
+          "match": "(\\\\{)",
+          "name": "storage.type.string.Storyscript"
+        },
+        {
+          "include": "#placeholder"
+        },
+        {
+          "begin": "((?!\\{))",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.type.string.Storyscript"
+            }
+          },
+          "contentName": "storage.type.string.Storyscript",
+          "end": "(.(?!=\\{))",
+          "endCaptures": {
+            "1": {
+              "name": "storage.type.string.Storyscript"
+            }
+          }
+        }
+      ]
+    },
+    "string_inner__1": {
+      "patterns": []
+    },
+    "string_single": {
+      "patterns": [
+        {
+          "begin": "(\\')",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.type.string.Storyscript"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#string_single__1"
+            }
+          ],
+          "end": "(\\')",
+          "endCaptures": {
+            "1": {
+              "name": "storage.type.string.Storyscript"
+            }
+          }
+        }
+      ]
+    },
+    "string_single__1": {
+      "patterns": [
+        {
+          "include": "#string_inner"
+        }
+      ]
+    },
+    "string_single_triple": {
+      "patterns": [
+        {
+          "begin": "(\\'{3})",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.type.string.Storyscript"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#string_single_triple__1"
+            }
+          ],
+          "end": "(\\'{3})",
+          "endCaptures": {
+            "1": {
+              "name": "storage.type.string.Storyscript"
+            }
+          }
+        }
+      ]
+    },
+    "string_single_triple__1": {
+      "patterns": [
+        {
+          "include": "#string_inner"
+        }
+      ]
+    },
+    "type": {
+      "patterns": [
+        {
+          "match": "(int|string|boolean|map|list|object)",
+          "name": "support.type.Storyscript"
+        }
+      ]
+    },
+    "varattr": {
+      "patterns": [
+        {
+          "match": "(\\.[\\w_]+)",
+          "name": "meta.identifier.Storyscript"
+        }
+      ]
+    },
+    "variable": {
+      "patterns": [
+        {
+          "match": "([\\w_]+)",
+          "name": "meta.identifier.Storyscript"
+        }
+      ]
+    }
+  }
+}
