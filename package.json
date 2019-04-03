@@ -86,6 +86,12 @@
                 "command": "sls.restart",
                 "title": "Restart the SLS server"
             }
+        ],
+        "snippets": [
+            {
+                "language": "storyscript",
+                "path": "./snippets/snippets.json"
+            }
         ]
     },
     "scripts": {
