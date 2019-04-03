@@ -54,7 +54,7 @@
             {
                 "language": "storyscript",
                 "scopeName": "source.story",
-                "path": "./syntaxes/Storyscript.tmLanguage"
+                "path": "./syntax-highlighter/dist/textmate/storyscript.tmbundle/Syntaxes/Storyscript.tmLanguage"
             }
         ],
         "configuration": {
