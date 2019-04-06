@@ -1,3 +1,4 @@
 .vscode/
 .vscode-dev/
 venv/
+/syntax-highlighter
