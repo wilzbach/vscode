@@ -16,12 +16,17 @@ ext install asyncy.storyscript
 
 ## Features
 
+### Syntax highlighting
+
 ![Storyscript in Visual Studio Code](https://raw.githubusercontent.com/storyscript/vscode/master/preview.png)
 
-- Syntax highlighting
-- Autocomplete (provided via the LSP module, WIP)
-- Linting (WIP)
-- Formatting (WIP)
+### Auto-completion
+
+![autocompletion](https://user-images.githubusercontent.com/4370550/55664816-e11f9d80-5834-11e9-832c-ecfb888e20d3.gif)
+
+### Linting
+
+![linting](https://user-images.githubusercontent.com/4370550/55664858-a4a07180-5835-11e9-9ad2-f5f61ffb9ba0.gif)
 
 ## Development
 
