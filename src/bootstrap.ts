@@ -169,7 +169,7 @@ class SLSUpgrade {
         }
     }
 
-    // Ensures a virtualenv directory exists. Otherwise creates a new one
+    // Ensures a venv directory exists. Otherwise creates a new one
     async createVenv() {
         this.info(`Setting up virtualenv in ${this.venvFolder}`);
         const [err, _] = await plain(stat(this.venvFolder))
@@ -177,7 +177,7 @@ class SLSUpgrade {
             this.info('Re-using existing virtualenv');
             return;
         }
-        await execAsync(`virtualenv --python=python3 ${this.venvFolder}`);
+        await execAsync(`python3 -m venv ${this.venvFolder}`);
     }
 
     // Installs an explicit version of SLS with pip
