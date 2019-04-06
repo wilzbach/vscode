@@ -28,6 +28,29 @@ ext install asyncy.storyscript
 
 ![linting](https://user-images.githubusercontent.com/4370550/55664858-a4a07180-5835-11e9-9ad2-f5f61ffb9ba0.gif)
 
+## Debug output
+
+Set `sls.debug` to `true` in your user or worspace settings.
+
+To open your user and workspace settings, use the following VS Code menu command:
+
+- On Windows/Linux - File > Preferences > Settings
+- On macOS - Code > Preferences > Settings
+-
+You can also open the Settings editor from the Command Palette (`Ctrl+Shift+P`) with "Preferences: Open Settings" or use the keyboard shortcut (`Ctrl+,`).
+
+Alternatively, quickly paste this in your workspace to create a new settings file:
+
+```
+cat > .vscode/settings.json <<EOF
+{
+    "sls.debug": true
+}
+EOF
+```
+
+[Learn more about VSCode settings](https://code.visualstudio.com/docs/getstarted/settings).
+
 ## Development
 
 1) Install all dependencies
