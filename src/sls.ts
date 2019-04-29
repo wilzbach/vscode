@@ -1,2 +1,2 @@
 // the bundled SLS version
-export const expectedSLSVersion = '0.1.1';
+export const expectedSLSVersion = '0.1.2';
