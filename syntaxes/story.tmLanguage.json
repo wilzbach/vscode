@@ -40,7 +40,7 @@
     "arithmetic": {
       "patterns": [
         {
-          "match": "(\\+|\\-|\\*|\\*\\*|/|//|%|<<|>>|&|\\||\\^|~|(?!^)@)",
+          "match": "(\\!|\\+|\\-|\\*|\\*\\*|/|//|%|<<|>>|&|\\||\\^|~|(?!^)@)",
           "name": "keyword.operator.arithmetic.Storyscript"
         }
       ]
@@ -56,7 +56,7 @@
     "boolean": {
       "patterns": [
         {
-          "match": "(true|false)",
+          "match": "((true|false)(?!(\\s*\\=|\\w)))",
           "name": "constant.other.Storyscript"
         }
       ]
@@ -96,7 +96,7 @@
     "function": {
       "patterns": [
         {
-          "begin": "(function)",
+          "begin": "((?!\\W)(function)(?=\\s))",
           "beginCaptures": {
             "1": {
               "name": "support.function.Storyscript"
@@ -159,7 +159,7 @@
     "keyword": {
       "patterns": [
         {
-          "match": "(break|as|catch|returns?|continue|else|finally|if|then|try|when|while|foreach|and|or)",
+          "match": "((?!\\W)(break|as|catch|returns?|continue|is|not|else|finally|if|then|try|when|while|foreach|and|or)(\\s|$))",
           "name": "keyword.control.flow.Storyscript"
         }
       ]
@@ -396,6 +396,9 @@
           "include": "#slug"
         },
         {
+          "include": "#time"
+        },
+        {
           "include": "#variable"
         },
         {
@@ -546,10 +549,18 @@
         }
       ]
     },
+    "time": {
+      "patterns": [
+        {
+          "match": "((\\d+[smhdwqy])+)(?!(\\s*\\=|\\w))",
+          "name": "source.constant.Storyscript"
+        }
+      ]
+    },
     "type": {
       "patterns": [
         {
-          "match": "(int|string|boolean|map|list|object)",
+          "match": "((?!\\W)(int|string|boolean|map|list|object)((?=\\W)|$))",
           "name": "support.type.Storyscript"
         }
       ]
