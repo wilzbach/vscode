@@ -3,6 +3,10 @@
     "displayName": "Storyscript",
     "description": "Support for Asyncy's Cloud Native Programming Language, Storyscript",
     "icon": "res/icon.png",
+    "galleryBanner": {
+       "color": "#17181e",
+       "theme": "dark"
+     },
     "publisher": "Asyncy",
     "license": "Apache-2.0",
     "author": {
@@ -85,6 +89,13 @@
             {
                 "command": "sls.restart",
                 "title": "Restart the SLS server"
+            }
+        ],
+        "iconThemes": [
+            {
+              "id": "storyscript-theme",
+              "label": "Storyscript Theme",
+              "path": "./themes/storyscript-icon-theme.json"
             }
         ]
     },
