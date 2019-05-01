@@ -4,9 +4,9 @@
     "description": "Support for Asyncy's Cloud Native Programming Language, Storyscript",
     "icon": "res/icon.png",
     "galleryBanner": {
-       "color": "#17181e",
-       "theme": "dark"
-     },
+        "color": "#17181e",
+        "theme": "dark"
+    },
     "publisher": "Asyncy",
     "license": "Apache-2.0",
     "author": {
@@ -20,7 +20,7 @@
         "type": "git",
         "url": "https://github.com/storyscript/vscode"
     },
-    "version": "0.1.4",
+    "version": "0.1.5",
     "engines": {
         "vscode": "^1.26.0"
     },
@@ -93,9 +93,9 @@
         ],
         "iconThemes": [
             {
-              "id": "storyscript-theme",
-              "label": "Storyscript Theme",
-              "path": "./themes/storyscript-icon-theme.json"
+                "id": "storyscript-theme",
+                "label": "Storyscript Theme",
+                "path": "./themes/storyscript-icon-theme.json"
             }
         ]
     },
