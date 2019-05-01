@@ -24,6 +24,7 @@ import {
 import log from './log';
 
 const stat = promisify(fs.stat);
+const isWin = process.platform === 'win32';
 
 // run a command asynchronously
 function execAsync(cmd, options: object = {}): Promise<string> {
@@ -55,10 +56,26 @@ function exec(cmd: string, options: object = {}){
     return plain(execAsync(cmd, options));
 }
 
+// Returns the binary folder for used platform
+function venvBinFolder() {
+    if (isWin) {
+        return 'Scripts';
+    }
+    return 'bin';
+}
+
+// Returns the python binary for the used platform
+function pythonBinary() {
+    if (isWin) {
+        return 'python';
+    }
+    return 'python3';
+}
+
 // Makes sure that an exact version of SLS is installed
 export async function bootstrap(context: ExtensionContext) {
     const venvFolder = context.asAbsolutePath(path.join('venv'));
-    const slsBin = path.join(venvFolder, 'bin', 'sls');
+    const slsBin = path.join(venvFolder, venvBinFolder(), 'sls');
 
     // check the version of the installed SLS binary
     const [err, output] = await exec(`${slsBin} version`);
@@ -103,10 +120,12 @@ class SLSUpgradeError extends Error {
 class SLSUpgrade {
     slsBin:string;
     venvFolder:string;
+    venvBinFolder:string;
     progress: Progress<{message: string}>;
 
     constructor(venvFolder:string, progress: Progress<{message: string}>) {
         this.venvFolder = venvFolder;
+        this.venvBinFolder = path.join(venvFolder, venvBinFolder());
         this.progress = progress;
         this.slsBin = undefined;
     }
@@ -159,12 +178,12 @@ class SLSUpgrade {
 
     // Ensures that python3.6 or higher is available
     async checkPython() {
-        const output = await execAsync('python3 --version');
+        const output = await execAsync(`${pythonBinary()} --version`);
         const pythonVersion = output.replace("Python ", "").trim();
-        const isOldPython = some(["3.0", "3.1", "3.2", "3.3", "3.4", "3.5"],
+        const isSupportedPython = some(["3.6", "3.7", "3.8", "3.9"],
             e => pythonVersion.startsWith(e)
         );
-        if (isOldPython) {
+        if (!isSupportedPython) {
             throw new SLSUpgradeError('SLS requires Python3.6 or newer');
         }
     }
@@ -177,14 +196,14 @@ class SLSUpgrade {
             this.info('Re-using existing virtualenv');
             return;
         }
-        await execAsync(`python3 -m venv ${this.venvFolder}`);
+        await execAsync(`${pythonBinary()} -m venv ${this.venvFolder}`);
     }
 
     // Installs an explicit version of SLS with pip
     async installSLS() {
-        const pipBin = path.join(this.venvFolder, 'bin', 'pip');
+        const pipBin = path.join(this.venvBinFolder, 'pip');
         await execAsync(`${pipBin} install -U sls==${expectedSLSVersion}`);
-        this.slsBin = path.join(this.venvFolder, 'bin', 'sls');
+        this.slsBin = path.join(this.venvBinFolder, 'sls');
     }
 
     // Reports the current progress to the progress window
