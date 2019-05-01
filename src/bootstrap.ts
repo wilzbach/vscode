@@ -201,8 +201,8 @@ class SLSUpgrade {
 
     // Installs an explicit version of SLS with pip
     async installSLS() {
-        const pipBin = path.join(this.venvBinFolder, 'pip');
-        await execAsync(`${pipBin} install -U sls==${expectedSLSVersion}`);
+        const pythonBin = path.join(this.venvBinFolder, 'python');
+        await execAsync(`${pythonBin} -m pip install -U sls==${expectedSLSVersion}`);
         this.slsBin = path.join(this.venvBinFolder, 'sls');
     }
 
