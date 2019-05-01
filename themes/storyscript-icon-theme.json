@@ -1,0 +1,10 @@
+{
+  "iconDefinitions": {
+    "_storyscript_icon": {
+      "iconPath": "./storyscript_logo.svg"
+    }
+  },
+  "languageIds": {
+    "storyscript": "_storyscript_icon"
+  }
+}
