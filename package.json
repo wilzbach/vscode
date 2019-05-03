@@ -1,17 +1,17 @@
 {
-    "name": "storyscript",
+    "name": "script",
     "displayName": "Storyscript",
-    "description": "Support for Asyncy's Cloud Native Programming Language, Storyscript",
+    "description": "Support for the Cloud Native Programming Language, Storyscript",
     "icon": "res/icon.png",
     "galleryBanner": {
         "color": "#17181e",
         "theme": "dark"
     },
-    "publisher": "storyscript",
+    "publisher": "story",
     "license": "Apache-2.0",
     "author": {
-        "name": "Asyncy",
-        "url": "https://asyncy.com"
+        "name": "Storyscript",
+        "url": "https://storyscript.io"
     },
     "bugs": {
         "url": "https://github.com/storyscript/vscode/issues"
@@ -24,7 +24,7 @@
     "engines": {
         "vscode": "^1.26.0"
     },
-    "homepage": "http://storyscript.org",
+    "homepage": "https://storyscript.io",
     "qna": "https://github.com/storyscript/vscode/issues",
     "categories": [
         "Programming Languages",

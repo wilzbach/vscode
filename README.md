@@ -9,7 +9,7 @@ Provides Storyscript language support for Visual Studio Code powered by the [Sto
 Launch VS Code Quick Open (Ctrl+P), paste the following command, and press enter.
 
 ```shell
-ext install asyncy.storyscript
+ext install Storyscript.storyscript
 ```
 
 [Open on the VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=asyncy.storyscript)
