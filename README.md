@@ -12,7 +12,7 @@ Launch VS Code Quick Open (Ctrl+P), paste the following command, and press enter
 ext install story.script
 ```
 
-[Open on the VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=asyncy.storyscript)
+[Open on the VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=story.script)
 
 ## Features
 
