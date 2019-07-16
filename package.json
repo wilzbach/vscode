@@ -20,7 +20,7 @@
         "type": "git",
         "url": "https://github.com/storyscript/vscode"
     },
-    "version": "0.1.16",
+    "version": "0.1.17",
     "engines": {
         "vscode": "^1.26.0"
     },
