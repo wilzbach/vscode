@@ -1,6 +1,7 @@
 # VSCode Storyscript extension
 
 [![CircleCI](https://img.shields.io/circleci/project/github/storyscript/vscode/master.svg?style=for-the-badge)](https://circleci.com/gh/storyscript/vscode)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg?style=for-the-badge)](https://github.com/storyscript/.github/blob/master/CODE_OF_CONDUCT.md)
 
 Provides Storyscript language support for Visual Studio Code powered by the [Storyscript Language Server](https://github.com/storyscript/sls).
 
