@@ -29,6 +29,10 @@ ext install story.script
 
 ![linting](https://user-images.githubusercontent.com/4370550/55664858-a4a07180-5835-11e9-9ad2-f5f61ffb9ba0.gif)
 
+### Formatting
+
+![format](https://user-images.githubusercontent.com/4370550/67309574-667e4d00-f4fc-11e9-8151-38fc8caef2de.gif)
+
 ## Debug output
 
 Set `sls.debug` to `true` in your user or worspace settings.
