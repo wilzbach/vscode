@@ -109,7 +109,7 @@
         "vscode": "npm run vscode:prepublish && npm run vscode:open"
     },
     "dependencies": {
-        "lodash": "^4.17.11",
+        "lodash": "^4.17.13",
         "vscode-languageclient": "~5.1.1"
     },
     "devDependencies": {
